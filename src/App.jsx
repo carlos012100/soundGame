@@ -38,6 +38,7 @@ function App()
     },
     {
         color: '#0FFA03',
+
         ref: greenRef,
         sound: 'four'
     }
@@ -64,6 +65,7 @@ function App()
     setIsAllowedToPlay(true);
     const randomNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
     setSequence([...sequence, randomNumber]);
+
     setTurn(turn + 1);
     }
     const handleClick = (index) => {
@@ -120,10 +122,12 @@ function App()
                 randomNumber();
             }, 500);
         }
+
     }, [success])
 
     useEffect(() => {
         if(!isAllowedToPlay){
+
             sequence.map((item, index) => {
                 setTimeout(() => {
                     play({id: colors[item].sound});
@@ -135,6 +139,7 @@ function App()
             })
         }
         setIsAllowedToPlay(true);
+
     }, [sequence])
 
     return (
