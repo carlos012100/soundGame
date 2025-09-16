@@ -6,13 +6,15 @@
 }
 .container {
   display: flex;
-  flex-wrap: wrap;
-  width: 600px;
-  height: 600px;
-  background-color: black;
-  padding: 30px;
-  border-radius: 320px;
+  flex-direction: row;
+  justify-content: center; /* Centers the row horizontally */
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 0px;
 }
+
 .center-container {
   position: absolute;
   border-radius: 300px;
@@ -20,14 +22,21 @@
   width: 600px;
   height: 600px;
 }
-.pad {
+/* .pad {
   width: 250px;
   margin: 25px;
+} */
+.pad {
+  width: 120px; /* Adjust as needed */
+  height: 120px; /* Add a height so it's no longer a square */
+  margin: 10px;
+  border-radius: 0; /* Removes the curved edges */
 }
+
 .pad:hover {
   cursor: pointer;
 }
-.pad-0{
+/* .pad-0{
   border-top-left-radius: 300px;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -46,7 +55,7 @@
   border-bottom-right-radius:300px;
   border-top-right-radius:20px;
   border-bottom-left-radius:20px;
-}
+} */
 
 .logo {
   height: 6em;

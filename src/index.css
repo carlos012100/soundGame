@@ -29,11 +29,18 @@ body {
   min-width: 320px;
   min-height: 100vh;
   place-items: center;
+  background-image:url("./assets/images/tabla.png");
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  
 }
-
 h1 {
+  position: relative;
+  top: 300px;
   font-size: 3.2em;
   line-height: 1.1;
+  
 }
 
 button {
@@ -46,6 +53,8 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  position: relative;
+  top: 300px;
 }
 button:hover {
   border-color: #646cff;

@@ -1,6 +1,11 @@
 import {useState, useEffect, useRef} from 'react';
 import useSound from 'use-sound';
 import simon from './assets/sounds/sprite.mp3';
+import azul from './assets/images/azul.png';
+import bloodRed from './assets/images/bloodRed.png';
+import green from './assets/images/green.png';
+import yellow from './assets/images/yellow.png';
+
 import './App.css';
 
 
@@ -22,23 +27,22 @@ function App()
    });
    const colors = [
     {
-        color:' #FAF303',
+        image: yellow,
         ref: yellowRef,
         sound: 'one'
     },
     {
-        color: '#030AFA',
+        image: azul,
         ref: blueRef,
         sound: 'two'
     },
     {
-        color: '#FA0E03',
+        image: bloodRed,
         ref: redRef,
         sound: 'three'
     },
     {
-        color: '#0FFA03',
-
+        image: green,
         ref: greenRef,
         sound: 'four'
     }
@@ -91,6 +95,7 @@ function App()
                 if(index) colors[index].ref.current.style.opacity = (1);
                 play({id: 'error'})
                 setTimeout(() => {
+                    
                     if(index) colors[index].ref.current.style.opacity = (0.5);
                     setIsGameOn(false);
                 }, speed * 2);
@@ -153,13 +158,14 @@ function App()
         <div className="container">
                 {colors.map((item,index) => {
                         return (
-                            <div
+                            <img
                             key={index}
                             ref={item.ref}
+                            src={item.image}
                             className={`pad pad-${index}`} 
-                            style={{backgroundColor: `${item.color}`, opacity: 0.6}}
-                            onClick={() => handleClick(index)}
-                            ></div>
+                            style={{opacity: 0.6}}
+                            onClick={() => handleClick(index)}    
+                            />
                         )
                 })}
             </div>
