@@ -199,7 +199,7 @@ function App()
         initGame();
         }}
             >
-            Starts
+            Start
             </button>
 
         </>        
