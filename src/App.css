@@ -27,9 +27,9 @@
   margin: 25px;
 } */
 .pad {
-  width: 120px; /* Adjust as needed */
-  height: 120px; /* Add a height so it's no longer a square */
-  margin: 10px;
+  width: 100px; /* Adjust as needed */
+  height: auto; /* Add a height so it's no longer a square */
+  margin: 50px;
   border-radius: 0; /* Removes the curved edges */
 }
 
