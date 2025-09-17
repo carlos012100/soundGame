@@ -92,3 +92,18 @@
 .read-the-docs {
   color: #888;
 }
+/* Normal weight */
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('./assets/fonts/OptimusPrinceps.ttf') format('truetype');
+  font-weight: 400; /* normal */
+  font-style: normal;
+}
+
+/* SemiBold / Bold weight */
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('./assets/fonts/OptimusPrincepsSemiBold.ttf') format('truetype');
+  font-weight: 600; /* semi-bold */
+  font-style: normal;
+}

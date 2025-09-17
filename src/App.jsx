@@ -8,7 +8,6 @@ import yellow from './assets/images/yellow.png';
 
 import './App.css';
 
-
 function App()
 {
     const blueRef = useRef(null);
@@ -59,8 +58,15 @@ function App()
    const [pulses, setPulses] = useState(0);
    const [success, setSuccess] = useState(0);
    const [isGameOn, setIsGameOn] = useState(false);
+   const [background, setBackground] = useState('./public/hechizero.png');
+
+   const setGameBackground = () => setBackground("./public/tabla.png");
+   
+    const setDefaultBackground = () => setBackground("./public/hechizero.png");
+
    
     const initGame = () => {
+    setGameBackground(); // Explicitly set to tabla.png
     randomNumber();
     setIsGameOn(true);
 }
@@ -85,6 +91,14 @@ function App()
             }, speed / 2);
         }
     }
+    useEffect(() => {
+        document.body.style.backgroundImage = `url(${background})`;
+        }, [background]);
+
+    // const changeBackground = () => {
+    //     setBackground(prev => (prev === "./public/hechizero.png" ? "./public/tabla.png" : "./public/hechizero.png")); 
+    //     };
+
     useEffect(() => {
         if(pulses > 0){
             if(Number(sequence[pulses - 1]) === Number(currentGame[pulses - 1]))
@@ -114,6 +128,7 @@ function App()
             setTurn(0);
             setPulses(0);
             setSuccess(0);
+            setDefaultBackground();
         }
     }, [isGameOn])
 
@@ -132,7 +147,6 @@ function App()
 
     useEffect(() => {
         if(!isAllowedToPlay){
-
             sequence.map((item, index) => {
                 setTimeout(() => {
                     play({id: colors[item].sound});
@@ -146,6 +160,10 @@ function App()
         setIsAllowedToPlay(true);
 
     }, [sequence])
+    
+    useEffect(() => {
+    document.body.style.backgroundImage = `url(${background})`;
+}, [background]);
 
     return (
         <>
@@ -173,14 +191,18 @@ function App()
         :
         <>
         <div className='header'>
-            <h1> SUPER SIMON</h1>
+            <h1> Welcome to Simon's Chamber</h1>
 
         </div>
-        <button onClick={initGame}>START</button>
+       <button
+        onClick={() => {
+        initGame();
+        }}
+            >
+            Starts
+            </button>
 
-        </>
-
-        
+        </>        
         }
         
         </>
