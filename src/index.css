@@ -44,12 +44,19 @@ h1 {
   font-family: 'MyCustomFont', sans-serif;
   font-weight: 600;
   text-shadow: 
-    5px 5px black,       /* base black shadow */
-    0 0 10px #FAEBD7,      /* inner glow */
-    0 0 20px #FAEBD7,      /* stronger glow */
-    0 0 40px #FAEBD7,      /* outer glow */
-    0 0 60px #FAEBD7;      /* maximum outer glow */
+    5px 5px black,     
+    0 0 10px #FAEBD7,      
+    0 0 20px #FAEBD7,      
+    0 0 40px #FAEBD7,      
+    0 0 60px #FAEBD7;      
   animation: anim 1s linear infinite alternate;
+}
+h2{
+  position: relative;
+  top: -200px;
+
+
+  
 }
 
 @keyframes anim {
@@ -79,7 +86,7 @@ button {
   font-size: 3em;
   font-family: 'MyCustomFont', sans-serif;
   font-weight: 400;
-  background-color: #1a1a1a;
+  background-color: transparent;
   color: #FAEBD7;
     text-shadow: 
     1px 1px black,       /* base black shadow */
@@ -117,7 +124,7 @@ button {
 
 button:hover {
   box-shadow: 0 10px 16px rgba(0, 0, 0, 0.7); /* slightly bigger on hover */
-  transform: translateY(-2px); /* optional: lifts the button on hover */
+  transform: translateY(-12px); 
 
 
 }

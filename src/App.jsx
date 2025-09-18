@@ -81,10 +81,10 @@ function App()
     const handleClick = (index) => {
         if(isAllowedToPlay){
             play({id: colors[index].sound});
-            colors[index].ref.current.style.opacity = (1);
+            colors[index].ref.current.style.filter = "brightness(2)";
             colors[index].ref.current.style.scale=(0.9);
             setTimeout(() => {
-                colors[index].ref.current.style.opacity = (0.5);
+                colors[index].ref.current.style.filter = "brightness(1)";
                 colors[index].ref.current.style.scale=(1);
                 setCurrentGame([...currentGame, index]);
                 setPulses(pulses + 1);
@@ -106,11 +106,11 @@ function App()
                 setSuccess (success + 1);
             } else {
                 const index = sequence[pulses -1]
-                if(index) colors[index].ref.current.style.opacity = (1);
+                if(index) colors[index].ref.current.style.filter = "brightness(2)";
                 play({id: 'error'})
                 setTimeout(() => {
                     
-                    if(index) colors[index].ref.current.style.opacity = (0.5);
+                    if(index) colors[index].ref.current.style.filter = "brightness(1)";
                     setIsGameOn(false);
                 }, speed * 2);
                 setIsAllowedToPlay(false);
@@ -150,9 +150,9 @@ function App()
             sequence.map((item, index) => {
                 setTimeout(() => {
                     play({id: colors[item].sound});
-                    colors[item].ref.current.style.opacity = (1);
+                    colors[item].ref.current.style.filter = "brightness(2)";
                     setTimeout(() => {
-                        colors[item].ref.current.style.opacity = (0.5);
+                        colors[item].ref.current.style.filter = "brightness(1)";
                     }, speed / 2);
                 }, index * speed)
             })
@@ -173,6 +173,9 @@ function App()
         <div className="header">
             <h1> Turn {turn}</h1>
         </div>
+        <div className = "intro">
+            <h2>Go Ahead, help yourself.</h2>
+        </div>
         <div className="container">
                 {colors.map((item,index) => {
                         return (
@@ -181,7 +184,7 @@ function App()
                             ref={item.ref}
                             src={item.image}
                             className={`pad pad-${index}`} 
-                            style={{opacity: 0.6}}
+                            style={{ filter: "brightness(1)", transition: "filter 0.2s, transform 0.2s" }}
                             onClick={() => handleClick(index)}    
                             />
                         )
