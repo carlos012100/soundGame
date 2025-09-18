@@ -14,7 +14,7 @@
   padding: 10px;
   border-radius: 0px;
   position: relative;
-  top :-15vh
+  top :-25vh
 
 }
 
@@ -30,9 +30,9 @@
   margin: 25px;
 } */
 .pad {
-  width: 100px; /* Adjust as needed */
+  width: 80px; /* Adjust as needed */
   height: auto; /* Add a height so it's no longer a square */
-  margin: 100px;
+  margin: 80px;
   border-radius: 0; /* Removes the curved edges */
 }
 

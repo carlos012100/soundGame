@@ -59,9 +59,9 @@ function App()
    const [success, setSuccess] = useState(0);
    const [isGameOn, setIsGameOn] = useState(false);
    const [background, setBackground] = useState('./public/hechizero.png');
+//    const [isGreeting,setIsGreeting] = useState(false);
 
    const setGameBackground = () => setBackground("./public/tabla.png");
-   
     const setDefaultBackground = () => setBackground("./public/hechizero.png");
 
    
@@ -69,7 +69,12 @@ function App()
     setGameBackground(); // Explicitly set to tabla.png
     randomNumber();
     setIsGameOn(true);
+    // setIsGreeting(true);
+    // setTimeout(() => {
+    //     setIsGreeting(false);
+    // }, 3000);
 }
+
 
     const randomNumber = () => {
     setIsAllowedToPlay(true);
@@ -171,10 +176,10 @@ function App()
         isGameOn ?
         <>
         <div className="header">
-            <h1> Turn {turn}</h1>
+            <h2> Turn {turn}</h2>
         </div>
         <div className = "intro">
-            <h2>Go Ahead. Help Yourself.</h2>
+            <h3>Go Ahead. Help Yourself.</h3>
         </div>
         <div className="container">
                 {colors.map((item,index) => {

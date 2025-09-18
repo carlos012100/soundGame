@@ -32,12 +32,28 @@ body {
   background-position: center; 
   background-repeat: no-repeat;
   background-size: cover;
-
-  
 }
 h1 {
   position: relative;
-  top: 20px;
+  top: 50px;
+  font-size: 4.2em;
+  line-height: 1.1;
+  color: white;
+  font-family: 'MyCustomFont', sans-serif;
+  font-weight: 600;
+  text-shadow: 
+    5px 5px black,     
+    0 0 10px #FAEBD7,      
+    0 0 20px #FAEBD7,      
+    0 0 40px #FAEBD7,      
+    0 0 60px #FAEBD7;      
+  animation: anim 1s linear infinite alternate;
+  box-shadow:  0 4px 6px rgba(0, 0, 0, 1);
+  border-color: black;
+}
+h2{
+  position: relative;
+  top: 500px;
   font-size: 4.2em;
   line-height: 1.1;
   color: white;
@@ -51,14 +67,30 @@ h1 {
     0 0 60px #FAEBD7;      
   animation: anim 1s linear infinite alternate;
 }
-h2{
+.intro{
   position: relative;
-  top: -200px;
-
-
-  
+  box-sizing: border-box;
+  border-color: black;
+  border-radius: 10px;
+  top: -20vh;
+  left: 290px;
+  box-shadow: 15px 10px 10px rgba(0, 0, 0, 0.5); 
+  width: 400px;
+  background: rgba(0, 0, 0, 0.9); /* black at 50% opacity */
+  font-family: 'MyCustomFont', sans-serif;
+  font-weight: 600;
+  color:   #CACA97  ;
+  font-size: 1.5em;
+  animation: anim3 1s linear infinite alternate;
 }
-
+@keyframes anim3 {
+      0% {
+        color: #CACA97 
+}
+      100% {
+        color:#808000
+}
+}
 @keyframes anim {
   from {
     text-shadow: 
