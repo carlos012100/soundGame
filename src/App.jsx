@@ -59,7 +59,7 @@ function App()
    const [success, setSuccess] = useState(0);
    const [isGameOn, setIsGameOn] = useState(false);
    const [background, setBackground] = useState('./public/hechizero.png');
-//    const [isGreeting,setIsGreeting] = useState(false);
+   const [isGreeting,setIsGreeting] = useState(false);
 
    const setGameBackground = () => setBackground("./public/tabla.png");
     const setDefaultBackground = () => setBackground("./public/hechizero.png");
@@ -67,17 +67,13 @@ function App()
    
     const initGame = () => {
     setGameBackground(); // Explicitly set to tabla.png
-    randomNumber();
     setIsGameOn(true);
-    // setIsGreeting(true);
-    // setTimeout(() => {
-    //     setIsGreeting(false);
-    // }, 3000);
+    setIsGreeting(true);
 }
 
 
     const randomNumber = () => {
-    setIsAllowedToPlay(true);
+    setIsAllowedToPlay(false);
     const randomNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
     setSequence([...sequence, randomNumber]);
 
@@ -166,9 +162,6 @@ function App()
 
     }, [sequence])
     
-    useEffect(() => {
-    document.body.style.backgroundImage = `url(${background})`;
-}, [background]);
 
     return (
         <>
