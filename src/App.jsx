@@ -174,7 +174,7 @@ function App()
             <h1> Turn {turn}</h1>
         </div>
         <div className = "intro">
-            <h2>Go Ahead, help yourself.</h2>
+            <h2>Go Ahead. Help Yourself.</h2>
         </div>
         <div className="container">
                 {colors.map((item,index) => {
