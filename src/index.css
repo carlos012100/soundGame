@@ -36,7 +36,7 @@ body {
 h1 {
   position: relative;
   top: 50px;
-  font-size: 4.2em;
+  font-size: 5.2em;
   line-height: 1.1;
   color: white;
   font-family: 'MyCustomFont', sans-serif;
@@ -54,7 +54,7 @@ h1 {
 h2{
   position: relative;
   top: 500px;
-  font-size: 4.2em;
+  font-size: 3.2em;
   line-height: 1.1;
   color: white;
   font-family: 'MyCustomFont', sans-serif;
@@ -72,25 +72,45 @@ h2{
   box-sizing: border-box;
   border-color: black;
   border-radius: 10px;
-  top: -20vh;
-  left: 290px;
-  box-shadow: 15px 10px 10px rgba(0, 0, 0, 0.5); 
-  width: 400px;
-  background: rgba(0, 0, 0, 0.9); /* black at 50% opacity */
+  top: -10vh;
+  left: 350px;
+  box-shadow: 15px 10px 10px rgba(0, 0, 0, 0.1); 
+  width: 450px;
+  background:  #FAEBD7;
   font-family: 'MyCustomFont', sans-serif;
   font-weight: 600;
-  color:   #CACA97  ;
-  font-size: 1.5em;
+  color:   #222A12;
+  font-size: 1.75em;
   animation: anim3 1s linear infinite alternate;
+  animation: introFloat 1.5s ease-in-out infinite alternate;
+
 }
 @keyframes anim3 {
       0% {
-        color: #CACA97 
+        color: #222A12 
 }
       100% {
         color:#808000
 }
 }
+
+@keyframes introFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
 @keyframes anim {
   from {
     text-shadow: 
@@ -121,19 +141,18 @@ button {
   background-color: transparent;
   color: #FAEBD7;
     text-shadow: 
-    1px 1px black,       /* base black shadow */
-    0 0 10px #FAEBD7,      /* inner glow */
-    0 0 20px #FAEBD7,      /* stronger glow */
-    0 0 40px #FAEBD7,      /* outer glow */
-    0 0 60px #FAEBD7;      /* maximum outer glow */
+    1px 1px black,       
+    0 0 10px #FAEBD7,     
+    0 0 20px #FAEBD7,      
+    0 0 40px #FAEBD7,     
+    0 0 60px #FAEBD7;    
   animation: anim2 1s linear infinite alternate;
   cursor: pointer;
   transition: all 0.25s;
   position: relative;
-  top: 100px;
+  top: 160px;
   
-  /* Proper box shadow */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* x-offset, y-offset, blur, color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 @keyframes anim2 {
       from {
@@ -155,7 +174,7 @@ button {
 }
 
 button:hover {
-  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.7); /* slightly bigger on hover */
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.7); 
   transform: translateY(-12px); 
 
 
@@ -178,3 +197,77 @@ button:focus-visible {
     background-color: transparent;
   }
 }
+.game-over {
+  font-family: 'MyCustomFont', sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 0rem 0rem;
+  /* border-radius: 12px; */
+  text-align: center;
+  animation: fadeIn 0.4s ease-in-out;
+  display: inline-block;
+  border: 80px solid transparent;
+
+
+}
+.game-over-title{
+ top: 0%;
+}
+
+.game-over-died {
+  font-size: 2rem;
+  font-family: 'Cinzel', serif;
+    text-shadow: 
+    5px 5px black,     
+    0 0 10px #FAEBD7,      
+    0 0 20px #FAEBD7,      
+    0 0 40px #FAEBD7,      
+    0 0 60px #FAEBD7;      
+  color: #ffffff;
+  animation: anim 1s linear infinite alternate;
+
+}
+
+.game-over-try {
+  font-size: 2rem;
+  font-family: 'Arial', sans-serif;
+    text-shadow: 
+    5px 5px black,     
+    0 0 10px #FAEBD7,      
+    0 0 20px #FAEBD7,      
+    0 0 40px #FAEBD7,      
+    0 0 60px #FAEBD7;      
+  color: #ffffff;
+  animation: anim 1s linear infinite alternate;
+
+}
+
+.game-over-button {
+  background-color: #000;      
+  color: #8D0D26;             
+  font-family: 'MyCustomFont', sans-serif;
+  font-size: 2.5rem;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid white;  
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-transform: uppercase;    
+  box-shadow: 0 0 5px #000000; 
+}
+
+.game-over-button:hover {
+  background-color: #111;     
+  color: 	#ff9a00;  
+  box-shadow: 0 0 10px #ffffff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
